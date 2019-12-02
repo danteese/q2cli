@@ -11,6 +11,7 @@ import click
 import q2cli.builtin.dev
 import q2cli.builtin.info
 import q2cli.builtin.tools
+import q2cli.builtin.cache
 
 from q2cli.click.command import BaseCommandMixin
 from q2cli.core.config import CONFIG
@@ -21,7 +22,8 @@ class RootCommand(BaseCommandMixin, click.MultiCommand):
     _builtin_commands = {
         'info': q2cli.builtin.info.info,
         'tools': q2cli.builtin.tools.tools,
-        'dev': q2cli.builtin.dev.dev
+        'dev': q2cli.builtin.dev.dev,
+        'cache': q2cli.builtin.cache.cache
     }
 
     def __init__(self, *args, **kwargs):
