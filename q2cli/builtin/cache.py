@@ -57,6 +57,7 @@ def init():
                ".cache directory, else create it and set ENV VAR QIIME2CACHE to true.",
                cls=ToolCommand)
 def activate():
+    import qiime2.sdk
     qiime2.sdk.set_cache_state(os.getcwd(), 1)
     qiime2.sdk.verify_cache_file(os.getcwd())
     click.echo("Qiime cache activated.")
@@ -67,6 +68,7 @@ def activate():
                help="This command set to false QIIME2CACHE environment",
                cls=ToolCommand)
 def deactivate():
+    import qiime2.sdk
     qiime2.sdk.set_cache_state(os.getcwd(), 0)
     click.echo("Qiime cache deactivated.")
 
